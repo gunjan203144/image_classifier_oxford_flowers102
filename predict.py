@@ -57,7 +57,7 @@ def load_json(path):
     return class_names
 
 def filtered(classes=None,class_names=None):
-    return [class_names.get(str(key)) if key else "Placeholder" for key in classes.numpy().squeeze().tolist()]
+    return [class_names.get(str(key+1)) if key else "Placeholder" for key in classes.numpy().squeeze().tolist()]
 
 def run():
     args = parse_args()
